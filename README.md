@@ -1,20 +1,16 @@
 # MisionTIC2022-Ciclo1
-Este repositorio contiene material e instrucciones para seguir el curso de Python y las presentaciones en Jupyter en profundidad" durante Misión TIC 2020.
+Este repositorio contiene material e instrucciones para seguir el curso de Python y las presentaciones en Jupyter en profundidad durante Misión TIC 2020.
 
 ### Prerequisites
 
 * Debe tener instalada la última versión de python.
-* Obtener los materiales del curso 
+* Debe obtener los materiales del curso 
 		
-Para obtener los materiales del curso, clone este repositorio. * Planifique actualizar los materiales poco antes de la clase. *
-		''
-		clon de git https://github.com/LuisaRestrepo/MisionTIC2022-Ciclo1
-		''
-	
-  Para actualizar los materiales:
-		''
-		git pull
-		''
+** Para obtener los materiales del curso, clone este repositorio. 
+```git clone https://github.com/LuisaRestrepo/MisionTIC2022-Ciclo1```
+** Planifique actualizar los materiales un poco antes de la clase.
+** Para actualizar los materiales:
+```git pull```
 		
 No dude en abrir un problema o enviar una solicitud de extracción para actualizar estos materiales si las cosas no están claras.
 
