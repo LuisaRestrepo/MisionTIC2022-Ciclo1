@@ -1,5 +1,5 @@
 # MisionTIC2022-Ciclo1
-Este repositorio contiene material e instrucciones para seguir el curso de Python y las presentaciones en Jupyter en profundidad durante Misión TIC 2020.
+Este repositorio contiene material e instrucciones para seguir el curso de Python y las presentaciones en Jupyter durante Misión TIC 2020.
 
 ### Prerequisites
 
@@ -9,7 +9,7 @@ Este repositorio contiene material e instrucciones para seguir el curso de Pytho
 
 Para ejecutar las presentaciones, siga los siguientes pasos:
 
-1. Descargue este repositorio clone este repositorio. 
+1. Descargue este repositorio:
 ```git clone https://github.com/LuisaRestrepo/MisionTIC2022-Ciclo1```
 2. Instale RISE: visualize las opciones de instalación en el siguiente enlace https://rise.readthedocs.io/en/stable/
 3. Desde su consola ejecute el comando ```jupyter notebook```
@@ -19,6 +19,10 @@ Para ejecutar las presentaciones, siga los siguientes pasos:
 
 ### Questions
 No dude en abrir un problema o enviar una solicitud de extracción para actualizar estos materiales si las cosas no están claras.
+
+Para actualizar los materiales puede usar:```git pull```
+
 Nos pueden escribir a los correos:
+
 * luisa.r574@gmail.com
 * divan.oliveros@udea.edu.co 
