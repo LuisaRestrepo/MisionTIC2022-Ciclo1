@@ -20,8 +20,10 @@
 # In[ ]:
 
 
+#Este programa sirve para imprimir un mensaje
 print("Aprendamos a imprimir mensajes en Python")
-print("Aprendamos a imprimir mensajes en Java")
+#print("Aprendamos a imprimir mensajes en Java")
+print("HOLAAAA")
 
 
 # ### Indentación
@@ -91,8 +93,17 @@ print ("Primera Linea"); print ("Segunda Linea")
 # In[ ]:
 
 
+print(4)
 print("Hola","mundo")
-print("Hola"+"mundo")
+print("Hola" +   "mundo")
+print("Hola",1,3)
+print(5+6)
+
+
+# In[ ]:
+
+
+
 
 
 # Ejercicio [ImprimiendoMensajes] -> En su ambiente, separe las palabras con el uso de comas.
@@ -100,17 +111,17 @@ print("Hola"+"mundo")
 # In[ ]:
 
 
-
+print( "Hola", "luisa", "Hola" )
 
 
 # #### Parámetros sep y end pueden cambiar la forma en que se imprimen los contenidos
 # ##### Parámetro end
-# Los mensajes impresos siempre culminan en un salto de línea (\n). Cambiamos este comportamiento indicando un valor alternativo vía el parámetro end.
+# Los mensajes impresos siempre culminan en un salto de línea (\n). Cambiamos este comportamiento indicando un valor alternativo vía el parámetro `end`.
 
 # In[ ]:
 
 
-print("Hola",)
+print("Hola")
 print("mundo")
 
 print("Hola", end=" ")
@@ -121,12 +132,12 @@ print("mundo")
 
 
 # ##### Parámetro Sep
-# Los mensajes impresos por defecto son separados por un espacio(' '). Cambiamos este comportamiento indicando un valor alternativo vía el parámetro sep.
+# Los mensajes impresos por defecto son separados por un espacio(' '). Cambiamos este comportamiento indicando un valor alternativo vía el parámetro `sep`.
 
 # In[ ]:
 
 
-print("Hola","mundo", "!", sep="")
+print("Hola","mundo", "!", sep="", end="-")
 print("Hola","mundo", "!", sep=",")
 print("Hola","mundo", "!", sep="**")
 print("Hola","\nmundo", "!", sep=", ")
@@ -137,7 +148,7 @@ print("Hola","\nmundo", "!", sep=", ")
 # In[ ]:
 
 
-
+print("Hola", "luisa", "Hola", sep= "&")
 
 
 # ## Impresión de variables
@@ -148,7 +159,7 @@ print("Hola","\nmundo", "!", sep=", ")
 a = 7+5
 print(a)
 print(7+5)
-print("Esto es un texto literal",a)
+print('Esto es un texto literal',a)
 
 
 # In[ ]:
@@ -168,21 +179,23 @@ print(b,a)
 
 a = 7
 b = 5
-titulo = "Total = "
+titulo = "Total= "
 print(f"{titulo} 7+5")
 print(f" 7+5 = {a+b}")
 
 
 # Ejercicio [ImprimiendoMensajes2]
 # 
-# Se tienen las siguientes variables a = "planeta" y b = "celestes".
+# Se tienen las siguientes variables a = "planetas" y b = "celestes".
 # 
 # Imprima el siguiente mensaje usando f-string: los planetas son cuerpos celestes
 
 # In[ ]:
 
 
-
+a = "planetas"
+b = "celestes"
+print(f"los {a} son cuerpos {b}")
 
 
 # Ejercicio [ImprimiendoMensajes3]
@@ -194,7 +207,11 @@ print(f" 7+5 = {a+b}")
 # In[ ]:
 
 
-
+a = 9
+b = 8
+c = a*b
+print(f"El resultado de multiplicar {a} y {b} es {a*b}")
+print(f"El resultado de multiplicar {a} y {b} es {c}")
 
 
 # #### Impresión de variables con str.format()
@@ -207,10 +224,10 @@ a = 7
 b = 5
 
 print("Imprimir dos variables con format {} y {}".format(a,b))
-#print("Imprimir dos variables con format {0} y {1}".format(a,b))
-#print("Imprimir dos variables con format {1} y {0}".format(a,b))
-#print("Imprimir dos variables con format {v1} y {v2}".format(v1=a,v2=b))
-#print("Imprimir dos variables con format {0},{1}, y {otro}".format(a,b,otro="gato"))
+print("Imprimir dos variables con format {0} y {1}".format(a,b))
+print("Imprimir dos variables con format {1} y {0}".format(a,b))
+print("Imprimir dos variables con format {v1} y {v2}".format(v1=a,v2=b))
+print("Imprimir dos variables con format {0},{1}, y {otro}".format(a,b,otro="gato"))
 
 
 # # 3. Variables
@@ -260,9 +277,9 @@ print(type(y))
 # In[ ]:
 
 
-x = "luisa"
-f = 28
-z = 4.5f
+nombre = "luisa"
+edad = 28
+salario = 4.5
 ext = 0.2
 g = z+ext
 
@@ -345,6 +362,7 @@ print("La suma de dos variables: ", miVariableEntera+miVariableReal)
 # #### Tipos String o textos
 # - Las variables de tipo string se utilizan para almacenar texto, o cadenas de caracteres.
 # - Si queremos almacenar un texto, basta con escribir el texto que se desee almacenar entre comillas y asignarle una variable.
+# 
 
 # In[ ]:
 
@@ -365,6 +383,158 @@ print("Strings combinados: ",string1,string2,stringDeNumeros)
 #     - Otra para su edad
 # - Finalmente, imprima todos esos datos por pantalla.
 
+# #### Operaciones con strings
+# str (String) es una clase propia de python y provee una serie de funciones que son muy útiles.
+# 
+# str funciona como un arreglo (conjunto de variables del mismo tipo que se citan y manejan con un mismo nombre). Si definimos x = "Hola mundo", internamente Python almacena ese texto de la siguiente manera (como un arreglo)
+# 
+#         x = "Hola mundo"
+# 
+# |H||o||l||a|| ||m||u||n||d||o|
+# | --- || --- || --- || --- || --- || --- || --- || --- || --- || --- |
+# |0||1||2||3|| 4||5||6||7||8||9|  
+# 
+# El número se conoce como posición o índice.
+
+# ##### 1. Concatenación
+# Una de las operaciones mas útiles cuando se trabaja con Strings es la concatenación. Esta operación se realiza mediante el uso del símbolo “+”. Dos Strings pueden ser combinados para crear un nuevo String.
+# Consideremos el siguiente ejemplo:
+# 
+
+# In[ ]:
+
+
+a = "Hola luisa"
+b = ", cómo estás?"
+
+print(a+b) #Concatenación
+
+
+# ##### 2. Longitud
+# Podemos usar el método len(str) para retornar el número de caracteres del String str. 
+# 
+
+# In[ ]:
+
+
+a = "Hola luisa"
+print(len(a)) 
+print(len(a)-1) 
+
+
+# In[ ]:
+
+
+texto1 = "Hola beneficiarios "
+tamano = len(texto1)
+print(tamano)
+
+texto2 = "Hola"
+tamano2 = len(texto1+texto2)
+print(tamano2)
+
+
+# ##### 3. Extraer un carácter
+# Dado que los Strings en Python son arreglos, extraer un carácter especifico resulta muy sencillo. Basta con coloca el nombre de la variable que almacena el String, luego corchetes [] y dentro de los corchetes la posición del carácter que queremos extraer.
+
+# In[ ]:
+
+
+a = "Hola luisa"
+print(a[1]) #Obtener el caracter en determinada posición
+
+
+# In[ ]:
+
+
+texto1 = "Hola beneficiarios"
+p0 = texto1[0]
+p3 = texto1[3]
+pfinal = texto1[len(texto1)-1]
+print(p0)
+print(p3)
+print(pfinal)
+
+
+# Ejercicio [ModificarString]
+# - Cree una variable con un texto
+# - Imprima la longitud del texto.
+# - Imprima la última posición de la cadena
+# - Imprima el primer carácter de la cadena
+# - Imprima el último carácter de la cadena
+
+# In[ ]:
+
+
+
+
+
+# ##### 4. Extraer una cadena de una cadena
+# Si queremos extraer no un carácter, si no múltiples caracteres de una cadena, podemos utilizar los corchetes [] y dentro definir, la posición inicial desde la cual queremos empezar a extraer, luego le siguen dos puntos “:” y luego la posición final + 1 hasta la cual queremos extraer.
+
+# In[ ]:
+
+
+a = "Hola luisa"
+print(a[2:5]) #Cortar una cadena
+print(a[:5]) #Cortar una cadena
+
+
+# ##### 5. Encontrar un carácter
+# Para encontrar un carácter en una cadena, o una cadena dentro de otra cadena, se puede utilizar la función str.find(str2). Esta función retorna la posición en la que aparece por primera vez el String str2, dentro del String str. O retorna -1 si no se encuentra.
+
+# In[ ]:
+
+
+a = "Hola luisa"
+print(a.find("a")) #Retorna la posición en donde se encuentra el string
+print(a.find("a",4)) #Retorna la posición en donde se encuentra el string, despues de esa posición
+
+busquedad1 = a.find("a")
+print(a.find("a",busquedad1+1))
+
+print(a.find("lui"))
+
+print("free" in a) #Validar si una palabra existe en la cadena inicial
+print("expensive" not in a) #Validar si una palabra no existe en la cadena inicial
+
+
+# ##### 6. Contar
+# La función str.count(str2) se utiliza para encontrar cuantas veces aparece el String str2, dentro del String str.
+
+# In[ ]:
+
+
+a = "Hola luisa"
+print(a.count("a")) #Encontrar cuantas veces aparece la letra a
+print(a.count("lu"))
+
+
+# ##### Modificando strings
+# - Podemos usar el método str.lower() para retornar el String str en minúsculas. 
+# - Podemos usar el método str.upper() para retornar el String str en mayúsculas. 
+# - Podemos usar el método str.replace(a,b) para retornar el String str pero reemplazándole todos los texto que coindicen con a, por los textos b.
+# - Podemos usar el método srt.strip() para eliminar los espacios al inicio y al final de la cadena.
+
+# In[ ]:
+
+
+a = " Hola luisa "
+print(a.upper())
+print(a.lower())
+print(a.replace("H", "J"))
+print(a.strip())
+
+
+# Ejercicio [ModificarString]
+# - Cree una variable con un texto
+# - Obtenga la longitud del texto.
+# - Imprima la posición donde se encuentra la primera "a"
+# - Imprima la posición de donde se encuentra la segunda letra "a" en el texto recibido.
+# - Imprima el primer carácter de la cadena
+# - Imprima el último carácter de la cadena
+# 
+
 # In[ ]:
 
 
@@ -383,17 +553,42 @@ y = False
 print("x es: ", x)
 
 
+# #### Convirtiendo Variables
+# Al programar, hay ocasiones en las que necesitamos convertir valores entre tipos para manipular los valores de una manera diferente. Por ejemplo, es posible que necesitemos concatenar valores numéricos con cadenas o representar posiciones decimales en números que se inicializaron como valores enteros.
+
 # In[ ]:
 
 
-#Conviritiendo variables
 inicial = 3
-x = str(inicial)    # x will be '3'
-y = int(inicial)    # y will be 3
-z = float(inicial)  # z will be 3.0
+x = str(inicial)    # x será '3'
+y = int(inicial)    # y será 3
+z = float(inicial)  # z será 3.0
 print(x)
 print(y)
 print(z)
+
+
+# In[ ]:
+
+
+inicial = "hola"
+#x = int(inicial) #Error
+print(x)
+
+inicial2 = "3"
+x2 = int(inicial2) #Valido
+print(x2)
+
+
+# Ejercicio [ConvirtiendoVariables]
+# - Cree una variable con un texto que contenga números.
+# - Convierta ese texto a entero e imprima el resultado.
+# - Convierta ese texto a real e imprima el resultado.
+
+# In[ ]:
+
+
+
 
 
 # # 4. Recibir datos en Python
@@ -466,11 +661,23 @@ print(a+b)
 
 # •	Ejercicio [SolicitudInfo3]
 # - Cree un programa que le solicite al usuario:
-#     Sus nombres y apellidos (guárdelos como String)
-#     Su fecha de nacimiento (guárdela como String)
-#     Su edad (guárdela como int)
-#     Su estatura (guárdela como float)
+#     - Sus nombres y apellidos (guárdelos como String)
+#     - Su fecha de nacimiento (guárdela como String)
+#     - Su edad (guárdela como int)
+#     - Su estatura (guárdela como float)
 # - Finalmente, imprima todos esos datos por pantalla.
+
+# In[ ]:
+
+
+
+
+
+# •	Ejercicio [area-circulo]
+# -	Pídale al usuario el radio de un círculo (float)
+# -	Calcule el área del circulo (area = 3.14 * radio * radio)
+# -	Imprima por pantalla el área
+# 
 
 # In[ ]:
 
@@ -516,14 +723,21 @@ print(a+b)
 
 
 
-# •	Ejercicio [area-circulo]
-# -	Pídale al usuario el radio de un círculo (float)
-# -	Calcule el área del circulo (area = 3.14*radio*radio)
-# -	Imprima por pantalla el área
+# •	Ejercicio [peso]
+# 
+# Escriba un programa que pida el peso (en kilogramos) y la altura (en metros) de una persona y que calcule su índice de masa corporal (imc).
+# fórmula imc = peso / altura al cuadrado.
 # 
 
-# In[ ]:
+# •	Ejercicio [pulgadas]
+# 
+# Escriba un programa que pida una distancia en pulgadas y que escriba esa distancia en centímetros. Una pulgada son 2,54 cm
 
+# •	Ejercicio [celsius-farenheit]
+# 
+# Escriba un programa que pida una temperatura en grados Celsius y que escriba esa temperatura en grados Fahrenheit.
+# $F = 1,8 * C + 32 $
 
-
-
+# •	Ejercicio [segundos]
+# 
+# Escriba un programa que pida una cantidad de segundos y que escriba cuántos horas y minutos son. 
