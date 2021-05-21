@@ -332,6 +332,7 @@ primer_nombre = "luisa"
 
 
 # #### Tipos númericos
+# Se utilizan para almacenar números.
 
 # In[ ]:
 
@@ -356,7 +357,13 @@ print("La suma de dos variables: ", miVariableEntera+miVariableReal)
 # In[ ]:
 
 
-
+edadBillGates = 65
+edadMark = 37
+edadMarianaPajon = 29
+suma = edadBillGates+edadMark+edadMarianaPajon
+promedio = suma / 3
+print("{0:.2f}".format(promedio))
+print(round(promedio, 2))
 
 
 # #### Tipos String o textos
@@ -442,6 +449,9 @@ print(tamano2)
 
 a = "Hola luisa"
 print(a[1]) #Obtener el caracter en determinada posición
+print(a[0])
+print(a[len(a)-1])
+print(a[9])
 
 
 # In[ ]:
@@ -489,13 +499,14 @@ print(a[:5]) #Cortar una cadena
 a = "Hola luisa"
 print(a.find("a")) #Retorna la posición en donde se encuentra el string
 print(a.find("a",4)) #Retorna la posición en donde se encuentra el string, despues de esa posición
+print(a.find("o",4))
 
 busquedad1 = a.find("a")
 print(a.find("a",busquedad1+1))
 
 print(a.find("lui"))
 
-print("free" in a) #Validar si una palabra existe en la cadena inicial
+print("Hola" in a) #Validar si una palabra existe en la cadena inicial
 print("expensive" not in a) #Validar si una palabra no existe en la cadena inicial
 
 
@@ -519,10 +530,10 @@ print(a.count("lu"))
 # In[ ]:
 
 
-a = " Hola luisa "
+a = " Hola luisa    "
 print(a.upper())
 print(a.lower())
-print(a.replace("H", "J"))
+print(a.replace("a", "J"))
 print(a.strip())
 
 
@@ -538,7 +549,13 @@ print(a.strip())
 # In[ ]:
 
 
-
+texto = "Holaaaa"
+print(len(texto))
+busqueda = texto.find("a")
+print(busqueda)
+print(texto.find("a", busqueda+1))
+print(texto[0])
+print(texto[len(texto)-1])
 
 
 # #### Booleanos
@@ -566,6 +583,9 @@ z = float(inicial)  # z será 3.0
 print(x)
 print(y)
 print(z)
+print(type(x))
+print(type(y))
+print(type(z))
 
 
 # In[ ]:
@@ -600,6 +620,7 @@ print(x2)
 
 Dato = input("Escriba el dato1")
 print(Dato)
+print(type(Dato))
 
 
 # Ejercicio [SolicitudInfo]
@@ -611,12 +632,14 @@ print(Dato)
 # In[ ]:
 
 
-
+Nombre = input("Ingrese su nombre")
+Apellido = input(f"Hola {Nombre}, ingrese su apellido")
+print(Nombre,Apellido)
 
 
 # #### Uso de input() con f-string
 
-# In[ ]:
+# In[49]:
 
 
 nombre = input("Dígite su nombre")
@@ -633,7 +656,7 @@ edad = input("Dígite su edad")
 print(type(edad))
 
 
-# In[ ]:
+# In[50]:
 
 
 edad = int(input("Dígite su edad"))
@@ -641,14 +664,15 @@ operacion = edad +2;
 print(operacion)
 
 
-# In[ ]:
+# In[51]:
 
 
 a = input("Entre un número")
 b = input("Entre otro número")
 print(a+b)
 
-a = int(input("Entre un número"))
+dato1 = input("Entre un número")
+a = int(dato1)
 b = int(input("Entre otro número"))
 print(a+b)
 
@@ -667,23 +691,11 @@ print(a+b)
 #     - Su estatura (guárdela como float)
 # - Finalmente, imprima todos esos datos por pantalla.
 
-# In[ ]:
-
-
-
-
-
 # •	Ejercicio [area-circulo]
 # -	Pídale al usuario el radio de un círculo (float)
 # -	Calcule el área del circulo (area = 3.14 * radio * radio)
 # -	Imprima por pantalla el área
 # 
-
-# In[ ]:
-
-
-
-
 
 # •	Ejercicio [area-rectangulo]
 # -	Pídale al usuario por pantalla la base de un rectángulo (float)
@@ -692,12 +704,6 @@ print(a+b)
 # -	Muestre el resultado por pantalla
 # 
 
-# In[ ]:
-
-
-
-
-
 # •	Ejercicio [edad]
 # -	Pídale al usuario por pantalla el año en el que nació (ingrese números ej: 1990) (int)
 # -	Pídale al usuario por pantalla el nombre (string)
@@ -705,23 +711,11 @@ print(a+b)
 # -	Muéstrele por pantalla la edad al usuario
 # 
 
-# In[ ]:
-
-
-
-
-
 # •	Ejercicio [asteroides]
 # -	Pídale al usuario un numero de asteroides (int)
 # -	Pídale al usuario un nombre para todos los asteroides (string)
 # -	Imprima por pantalla lo siguiente: “Los NUMERO_ASTEROIDES asteroides NOMBRE_ASTEROIDES caerán mañana”. (Nota reemplace NUMERO_ASTEROIDES y NOMBRE_ASTEROIDES por los valores recogidos por pantalla)
 # 
-
-# In[ ]:
-
-
-
-
 
 # •	Ejercicio [peso]
 # 
