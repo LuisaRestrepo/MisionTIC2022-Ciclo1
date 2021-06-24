@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Iniciamos 8:05pm
-
 # # 1. Introducción
 # - También llamados módulos en Python, son un conjunto de implementaciones funcionales codificadas en un lenguaje de  programación. Ofrecen paquetes de código ya estructurados a modo de funciones que pueden ser usadas por el programador. 
 # - Las librerías no se ejecutan de manera autónoma, sino que es el programa que las invoca lo que les da a estas su respectivo uso a través de funciones denominadas métodos o funciones. Estas funciones son propias de cada librería, aunque algunas librerías requieran de otras para funcionar. 
@@ -99,7 +97,8 @@ with open('C:/Users/USUARIO/Desktop/notasExcel.csv') as File:
 # In[ ]:
 
 
-with open('C:/Users/USUARIO/Desktop/notasExcel.csv') as File:
+#with open('C:/Users/USUARIO/Desktop/notasExcel.csv') as File:
+with open('notasExcel.csv') as File:
     reader = csv.reader(File)
     headers = next(reader)
     print(headers)
@@ -111,6 +110,8 @@ with open('C:/Users/USUARIO/Desktop/notasExcel.csv') as File:
     print(s)
 
 
+# # Iniciamos 8:05pm
+
 # ## 3. Write
 
 # In[ ]:
@@ -121,7 +122,8 @@ import csv
 with open('prueba.csv', 'a', newline='') as file: #w: abre en modo escritura
     writer = csv.writer(file)
     for i in a:
-        writer.writerow([i])
+        #writer.writerow([i])#FILA
+        writer.writerowS([i])#COLUMNA
 
 
 # ### Ejercicio
@@ -131,7 +133,7 @@ with open('prueba.csv', 'a', newline='') as file: #w: abre en modo escritura
 
 
 def descargarArchivo(self):
-    with open('Parqueadero.csv', 'a', newline='') as file: #w: abre en modo escritura
+    with open('Parqueadero.csv', 'a', newline='') as file: #w: abre en modo escritura, a:agrega al final
             writer = csv.writer(file)
             for i in range(len(self.matriz)):
                 for j in range(len(self.matriz[0])):
@@ -156,12 +158,6 @@ tabla = [["Sol",696000,1989100000],["Tierra",6371,5973.6], ["Luna",1737,73.5],["
 print(tabulate(tabla))
 
 
-#Diccionario Key:value
-diccionario = {"Name": ["Alice", "Bob"], 
-               "Age": [24, 19]}
-print(tabulate(diccionario, headers="keys"))
-
-
 # Además de lo anterior, podemos agregar otro parámetro, 
 # llamado tablefmt, que significa formato de tabla y trae 
 # distintas formas de mostrarla: 
@@ -174,9 +170,74 @@ print(tabulate(diccionario, headers="keys"))
 
 
 from tabulate import tabulate
-table = [["spam",42],["eggs",451],["bacon",0]] 
-headers = ["item", "qty"]
+headers = ["Ingrediente", "Cantidad"]
+table = [["Sal",42],["huevos",451],["tocino",0]] 
 print(tabulate(table, headers, tablefmt="plain"))
+
+
+# # Diccionarios
+# - Un diccionario es un tipo de datos que sirve para asociar pares de objetos.
+# - Un diccionario puede ser visto como una colección de llaves, cada una de las cuales tiene asociada un valor. Las llaves no están ordenadas y no hay llaves repetidas. La única manera de acceder a un valor es a través de su llave.
+
+# In[1]:
+
+
+telefonos = {}
+
+telefonos = {'Pepito': 3443232, 
+             'Jaimito': 1233211, 
+             'Fulanito': 2340012}
+
+print("Teléfono pepito",telefonos['Pepito'])
+telefonos['Jaimito'] = 4448139
+print("Teléfono jaimito",telefonos['Jaimito'])
+
+print(telefonos.items()) #prints keys and values
+print(telefonos.keys()) #prints keys
+print(telefonos.values()) #prints values
+
+
+# In[ ]:
+
+
+telefonos = {'Pepito': 3443232, 
+             'Jaimito': 1233211, 
+             'Fulanito': 2340012}
+
+print("Longitud",len(telefonos))
+
+for i in telefonos:
+    print(i) 
+print()
+for i in telefonos.values():
+    print(i)
+print()
+for key,value in telefonos.items():
+    print(key,value)
+
+
+# In[ ]:
+
+
+diccionario = {'nombre' : 'Carlos', 
+               'edad' : 22, 
+               'cursos': ['Python','Java','Node'] }
+
+print(diccionario['cursos'][0])
+print(diccionario['cursos'][1])
+print(diccionario['cursos'][2])
+
+diccionario["cursos"].append("Angular")
+
+print(diccionario)
+
+
+# In[ ]:
+
+
+diccionario = {"Nombre": ["Alice", "Bob"], 
+               "Edad": [24, 19]}
+print(tabulate(diccionario, headers="keys"))
 
 
 # # Pandas
@@ -199,6 +260,7 @@ print(tabulate(table, headers, tablefmt="plain"))
 
 
 import pandas as pd
+import numpy as np
 
 dict = {"country": ["Brazil", "Russia", "India", "China", "South Africa"],
         "capital": ["Brasilia", "Moscow", "New Dehli","Beijing", "Pretoria"],
@@ -207,20 +269,33 @@ dict = {"country": ["Brazil", "Russia", "India", "China", "South Africa"],
 conjunto = pd.DataFrame(dict) 
 print(conjunto)
 
+arreglo = pd.DataFrame(data=np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), index= [1, 2, 3], columns=[1, 2, 3])
+print(arreglo)
+
+
+# ### Buscando un registro
+# - __loc[]__: está basado en etiquetas, lo que significa que debe especificar filas y columnas en función de sus etiquetas de fila y columna .
+# - __iloc[]__: se basa en la posición entera, por lo que debe especificar filas y columnas por sus valores de posición entera (posición entera basada en 0).
 
 # In[ ]:
 
 
 #Buscando un registro
-conjunto.loc[3]
+#loc fuciona con los labels dados
+#iloc con los índices
+print("Buscanco el índice 3",conjunto.loc[3])
 
 conjuntoIndices = pd.DataFrame(dict, index=['a','b','c','d','e']) 
+print("Tabla con índices modificados")
 print(conjuntoIndices)
-print()
+print("Buscando el registro con el índice a")
 print(conjuntoIndices.loc["a"])
+print("Buscando el registro con el índice 0")
+print(conjuntoIndices.iloc[0])
 print()
-print(conjuntoIndices.iloc[2])
-print()
+
+print(arreglo.loc[2])
+print(arreglo.iloc[2])
 
 
 # # Numpy
